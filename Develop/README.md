@@ -1,18 +1,18 @@
-# w [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
-## Usage 
-w
+# Readme Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description 
-w
+I created a simple readme generator for anyone to use.
+## Usage 
+This can be used to create a high quality Readme.md.
+## Questions 
+No questions here.
 ## Installation 
-w
-## Tests 
-w
+No installation is required!
 ## Contributers 
-w
-## License 
-BSD 2-Clause License
+William Tonkel
+## Tests 
+No tests were done.
 ## TableOfContents 
-w 
+Check out these links below. 
 
 * [Link to Description](#description)
 * [Link to Usage](#usage)
@@ -21,5 +21,5 @@ w
 * [Link to Questions](#questions)
 * [Link to Tests](#tests)
 * [Link to License](#license)
-## Questions 
-w
+## License 
+The MIT License
