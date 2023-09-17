@@ -1,10 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateTitle = require("./utils/generateMarkdown");
+const generate = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
+  "Please write the name of your title",
   "PLease write your readme description.",
   "Please write the usage of this code.",
   "Please write installation instructions.",
@@ -147,6 +148,18 @@ const licenses = {
   ],
 };
 
+//functions
+//set up title
+function setTitle() {
+  for (const key in licenses) {
+    if (data.License[0] === licenses[key][0]) {
+      const data2 = `# ${data.Title} ${licenses[key][1]}`;
+      //write to readme file
+      writeToFile("README.md", data2);
+    }
+  }
+}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
@@ -161,42 +174,47 @@ function init() {
       {
         type: "input",
         message: questions[0],
-        name: "description",
+        name: "Title",
       },
       {
         type: "input",
         message: questions[1],
-        name: "usage",
+        name: "Description",
       },
       {
         type: "input",
         message: questions[2],
-        name: "installation",
+        name: "usage",
       },
       {
         type: "input",
         message: questions[3],
-        name: "tableOfContents",
+        name: "Installation",
       },
       {
         type: "input",
         message: questions[4],
-        name: "contributers",
+        name: "Table-Of-Contents",
       },
       {
         type: "input",
         message: questions[5],
-        name: "tests",
+        name: "Contributers",
       },
       {
         type: "input",
         message: questions[6],
-        name: "questions",
+        name: "Tests",
+      },
+      {
+        type: "input",
+        message: questions[7],
+        name: "Questions",
       },
       {
         type: "checkbox",
         message: questions[8],
-        name: "license",
+        name: "License",
         choices: [
           licenses.none[0],
           licenses.Apache2[0],
@@ -236,8 +254,13 @@ function init() {
       data = response;
       console.log(data);
 
-      //get title set up
-      for (const key in data) {
+      //  get title set up
+      setTitle();
+
+      for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        for (const key in data) {
+        }
       }
     });
 }
