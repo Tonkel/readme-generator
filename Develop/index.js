@@ -149,6 +149,7 @@ const licenses = {
 };
 
 //functions
+
 //set up title
 function setTitle() {
   for (const key in licenses) {
@@ -157,6 +158,20 @@ function setTitle() {
       //write to readme file
       writeToFile("README.md", data2);
     }
+  }
+}
+
+// set up rest of readme
+function appendReadme(obj) {
+  //since we already have a title
+  delete obj.Title;
+  //append rest of inputs
+  for (const key in data) {
+    const data3 = `\n## ${key} \n${data[key]}`;
+
+    fs.appendFile("README.md", data3, (err) =>
+      err ? console.error(err) : console.log("Success!")
+    );
   }
 }
 
@@ -184,7 +199,7 @@ function init() {
       {
         type: "input",
         message: questions[2],
-        name: "usage",
+        name: "Usage",
       },
       {
         type: "input",
@@ -252,16 +267,11 @@ function init() {
     ])
     .then((response) => {
       data = response;
-      console.log(data);
 
       //  get title set up
       setTitle();
-
-      for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        for (const key in data) {
-        }
-      }
+      //append rest of inputs
+      appendReadme(data);
     });
 }
 
