@@ -2,11 +2,11 @@
 ## Description 
 I created a simple readme generator for anyone to use.
 ## Usage 
-This can be used to create a high quality Readme.md.
+This can be used to create a high quality Readme.md. All you need to do is clone this repo, and run this code in your machine. To start the prompts run "node index" (make sure you are on the right file path" and you will be shown prompts. Answer these prompts to the best of your abilities and a README.md file will be generated with your answers.
 ## Questions 
 No questions here.
 ## Installation 
-No installation is required!
+You need node.js installed.
 ## Contributers 
 William Tonkel
 ## Tests 
